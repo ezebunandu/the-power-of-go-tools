@@ -1,11 +1,17 @@
 package main
 
 import (
-	"os"
+	"fmt"
+	"net/http"
 
 	"github.com/ezebunandu/hello"
 )
 
 func main() {
-	hello.PrintTo(os.Stdout)
+	fmt.Println("Listening on http://localhost:8222")
+	http.ListenAndServe(":8222", http.HandlerFunc(
+		func(w http.ResponseWriter, r *http.Request){
+			hello.PrintTo(w)
+		}),
+	)
 }
