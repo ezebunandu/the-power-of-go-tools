@@ -72,10 +72,14 @@ func (c counter) Lines() int {
     return lines
 }
 
-func Main() {
-    c, err := NewCounter()
+func Main() int {
+    c, err := NewCounter(
+        WithInputFromArgs(os.Args[1:]),
+    )
     if err != nil {
-        panic(err)
+        fmt.Fprintln(os.Stderr, err)
+        return 1
     }
     fmt.Println(c.Lines())
+    return 0
 }

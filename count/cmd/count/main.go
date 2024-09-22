@@ -1,7 +1,11 @@
 package main
 
-import ("github.com/ezebunandu/count")
+import (
+	"os"
+
+	"github.com/ezebunandu/count"
+)
 
 func main(){
-    count.Main()
+    os.Exit(count.Main())
 }
