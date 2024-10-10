@@ -1,0 +1,12 @@
+stdin three_matching_lines.txt
+exec match DUST
+stdout -count=1 '^are sprinkled with magic DUST'
+stdout -count=1 '^a special kind of DUST'
+stdout -count=1 '^DUST like no other'
+
+-- three_matching_lines.txt --
+some lines
+are sprinkled with magic DUST
+to make you smarter after reading
+a special kind of DUST
+DUST like no other
